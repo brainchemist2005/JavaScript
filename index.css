@@ -1,0 +1,227 @@
+
+
+.top {
+	display: flex;
+	background-color: #edfcff;
+	border: 0px;
+	margin-bottom: 0px;
+	justify-content: space-between;
+	height: 100px;
+}
+
+.boutton {
+	margin-top: 30px;
+	margin-left: 200px;
+	width: 60px;
+	height: 60px;
+	background-color: #edfcff;
+	border-width: 0;
+}
+
+.boutton img {
+	width: 50%;
+}
+
+#Alogo {
+	width: 150px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#logo {
+	width: 160%;
+	border-radius: 10px;
+	padding-left: 0%;
+	margin-top: 5px;
+}
+
+.navbar {
+	margin-top: 30px;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	color: #000;
+	text-transform: uppercase;
+}
+
+.navbar ul li ::after {
+	content: '';
+	height: 3px;
+	width: 0;
+	background: #1f6ed4;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.5s;
+}
+
+.navbar ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+	position: relative;
+	font-family: 'Gotham', sans-serif;
+}
+
+.navbar ul li :hover:after {
+	width: 100%;
+}
+
+.main
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left
+{
+    margin-right: 25%;
+}
+
+.right
+{
+    margin-left: 25%;
+}
+
+
+body {
+	background-color: #9acdd0;
+	background-size: 1600px ;
+	background-repeat: no-repeat;
+}
+
+.formulaire
+{
+	display: flex;
+	flex-direction: column;
+	color: #060505;
+	font-size: 20px;
+	margin: 10px;
+}
+
+.container1 p 
+{
+	color:rgb(0, 0, 0) ;
+	font-size: 30px;
+}
+
+.container1
+{
+	border: 3px solid;
+	padding: 20px;
+	border-radius: 20px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background-color: rgb(234, 215, 139);
+}
+
+
+body h1
+{
+	color: #0e0707;
+}
+
+.formulaire label,
+.formulaire input[type="radio"],
+.formulaire input[type="number"] {
+	margin-bottom: 10px; 
+}
+
+
+
+.reclamations
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 10px;
+}
+
+.reclamations label,
+.formulaire input[type="radio"]{
+	margin-left: 10px; 
+}
+
+.formulaire input[type="radio"],
+.formulaire input[type="number"], 
+.formulaire input[type="submit"]{
+	border-radius: 20px; 
+	margin-top: 10px;
+	height: 25px;
+}
+
+#age
+{
+	display: none;
+}
+
+#valeurId
+{
+	display: none;
+}
+
+#reponseReclamation
+{
+	display: none;
+}
+
+input[type="submit"]
+{
+	display: none;
+}
+
+#descriptionId
+{
+	display: none;
+}
+
+#nonAssurer{
+	font-size: 30px;
+	display: none;
+}
+
+#questionReclamation
+{
+	margin-top: 10px;
+	display: none;
+	flex-direction: column;
+}
+
+#montantReclamation1{
+	margin-top: 10px;
+	display: none;
+}
+
+#montantReclamation2{
+	margin-top: 10px;
+	display: none;
+}
+
+#montantReclamation3{
+	margin-top: 10px;
+	display: none;
+}
+
+#montantReclamation4{
+	margin-top: 10px;
+	display: none;
+}
+
+#total
+{
+	font-size: 30px;
+	display: none;
+}
+
+#submit {
+	border-radius: 20px;
+	width: 350px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
