@@ -38,8 +38,6 @@ function afficherDescription(valeur) {
     elementErreur.style.display = "none";
     }
 
-    console.log(valeur);
-
     return valeur;
 }
 
@@ -79,9 +77,7 @@ function affichermontantReclamation(valeur) {
         elementErreur.style.display = "inline";
     } else {
         elementReclamation.style.display = "inline";
-        console.log("valeur: " + valeur);
         max = valeur;
-        console.log("max: " + max);
         //return max; // Returning max value
     }
     
@@ -93,23 +89,12 @@ function affichermontantReclamation2(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
-    console.log("max: " + max);
-
-    console.log( parseInt(cout) + parseInt(valeur) > 35000);
-
     if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } 
-    else if (max >= num) {
-        console.log("valeur: " + valeur);
-        console.log("max: " + max);    
+    else if (max >= num) {    
         elementReclamation.style.display = "inline";
     }
-
-    console.log("valeur: " + valeur);
-    console.log("max: " + max);
-    console.log("cout: " + cout);
-
 
     return valeur;
 }
@@ -118,36 +103,30 @@ function affichermontantReclamation3(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
-    console.log("cout: " + cout);
-
     if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
-        console.log("valeur: " + valeur);
         elementReclamation.style.display = "inline";
     }
-
-    console.log("max: " + max);
-    console.log("cout: " + cout);
 
     return valeur;
 }
 
 function affichermontantReclamation4(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
+    var elementBoutton = document.getElementById("submit");
     var elementErreur = document.getElementById("nonAssurer");
 
     if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
-        console.log("valeur: " + valeur);
         elementReclamation.style.display = "inline";
+        elementBoutton.style.display = "inline";
     }
-
-    console.log("max: " + max);
-    console.log("num: " + num);
-    console.log("cout: " + cout);
-
+    else
+    {
+        elementBoutton.style.display = "inline";
+    }
 
     return valeur;
 }
@@ -157,19 +136,18 @@ var valeurAchat,montantDeBase,age,genre;
 function calculDeMontantDeBase(age,genre,valeurAchat,nombreReclamation,totalReclamations) {
 
     if(totalReclamations < 35000) {
-        if(age < 25 && genre == "Hommes" || age < 25 && genre == "Non-binaires" ) 
+        if(parseInt(age) < 25 && genre == "Homme" || parseInt(age) < 25 && genre == "Non-binaires" ) 
             montantDeBase = 0.05 * valeurAchat;
 
-        else if (age >= 75)
+        else if (parseInt(age) >= 75)
             montantDeBase = 0.04 * valeurAchat;
 
         else 
             montantDeBase =  0.02 * valeurAchat;
 
-        console.log("Hellloooooo  V" + valeurAchat + " M " + montantDeBase + " C " + totalReclamations + " N " + nombreReclamation + " Sexe " + genre + " Age " + age);
-
         calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations);
     }
+
 }
 
 function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations) {
@@ -183,7 +161,7 @@ function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamatio
 
     var elementTotal = document.getElementById("total");
 
-    elementTotal.innerHTML = "Votre assurance annuelle est estimée à " + assuranceAnnuelle.toFixed(2) + " equivaut à " + assuranceMensuelle + " par mois";
+    elementTotal.innerHTML = "Votre assurance annuelle est estimée à " + assuranceAnnuelle.toFixed(2) + " equivaut à " + assuranceMensuelle.toFixed(2) + " par mois";
 
     var elementBoutton = document.getElementById("submit");
 
