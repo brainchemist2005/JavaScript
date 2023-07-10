@@ -1,5 +1,3 @@
-
-
 .top {
 	display: flex;
 	background-color: #edfcff;
@@ -36,32 +34,28 @@
 	margin-top: 5px;
 }
 
-.main
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.main {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-.left
-{
-    margin-right: 25%;
+.left {
+	margin-right: 25%;
 }
 
-.right
-{
-    margin-left: 25%;
+.right {
+	margin-left: 25%;
 }
 
 
 body {
 	background-color: #9acdd0;
-	background-size: 1600px ;
+	background-size: 1600px;
 	background-repeat: no-repeat;
 }
 
-#formulaire
-{
+#formulaire {
 	display: flex;
 	flex-direction: column;
 	color: #060505;
@@ -69,14 +63,12 @@ body {
 	margin: 10px;
 }
 
-.container1 p 
-{
-	color:rgb(0, 0, 0) ;
+.container1 p {
+	color: rgb(0, 0, 0);
 	font-size: 30px;
 }
 
-.container1
-{
+.container1 {
 	border: 3px solid;
 	padding: 20px;
 	border-radius: 20px;
@@ -88,21 +80,18 @@ body {
 }
 
 
-body h1
-{
+body h1 {
 	color: #0e0707;
 }
 
 #formulaire label,
 #formulaire input[type="radio"],
 #formulaire input[type="number"] {
-	margin-bottom: 10px; 
+	margin-bottom: 10px;
 }
 
 
-
-.reclamations
-{
+.reclamations {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -110,77 +99,70 @@ body h1
 }
 
 .reclamations label,
-#formulaire input[type="radio"]{
-	margin-left: 10px; 
+#formulaire input[type="radio"] {
+	margin-left: 10px;
 }
 
 #formulaire input[type="radio"],
-#formulaire input[type="number"], 
-#formulaire input[type="submit"]{
-	border-radius: 20px; 
+#formulaire input[type="number"],
+#formulaire input[type="submit"] {
+	border-radius: 20px;
 	margin-top: 10px;
 	height: 25px;
 }
 
-#age
-{
+#age {
 	display: none;
 }
 
-#valeurId
-{
+#valeurId {
 	display: none;
 }
 
-#reponseReclamation
-{
+#reponseReclamation {
 	display: none;
 }
 
-input[type="submit"]
-{
+input[type="submit"] {
 	display: none;
 }
 
-#descriptionId
-{
+#descriptionId {
 	display: none;
 }
 
-#nonAssurer{
+#nonAssurer {
 	font-size: 30px;
 	display: none;
 }
 
-#questionReclamation
-{
+#questionReclamation {
 	margin-top: 10px;
 	display: none;
 	flex-direction: column;
 }
 
-#montantReclamation1{
+#montantReclamation1 {
 	margin-top: 10px;
 	display: none;
 }
 
-#montantReclamation2{
+#montantReclamation2 {
 	margin-top: 10px;
 	display: none;
 }
 
-#montantReclamation3{
+#montantReclamation3 {
 	margin-top: 10px;
 	display: none;
 }
 
-#montantReclamation4{
+#montantReclamation4 {
 	margin-top: 10px;
 	display: none;
 }
 
-#total
-{
+#total {
 	font-size: 30px;
 	display: none;
 }

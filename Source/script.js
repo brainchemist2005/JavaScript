@@ -5,16 +5,14 @@ function afficherAge(valeur) {
     return valeur;
 }
 
-function afficherValeur(sex,age) {
+function afficherValeur(sex, age) {
     var elementValeur = document.getElementById("valeurId");
     var elementErreur = document.getElementById("nonAssurer");
 
-    if(sex == "Femme" && age < 16 || sex == "Homme" && age < 18 || sex == "Non-binaire" && age < 18 || age > 100){
+    if (sex == "Femme" && age < 16 || sex == "Homme" && age < 18 || sex == "Non-binaire" && age < 18 || age > 100) {
         elementErreur.style.display = "inline";
         elementValeur.style.display = "none";
-    }
-
-    else {
+    } else {
         var elementValeur = document.getElementById("valeurId");
         elementValeur.style.display = "inline";
         elementErreur.style.display = "none";
@@ -27,15 +25,13 @@ function afficherDescription(valeur) {
     var elementErreur = document.getElementById("nonAssurer");
 
 
-    if(valeur > 100000){
+    if (valeur > 100000) {
         elementErreur.style.display = "inline";
         elementValeur.style.display = "none";
-    }
-
-    else {
-    var elementDescription = document.getElementById("descriptionId");
-    elementDescription.style.display = "inline";
-    elementErreur.style.display = "none";
+    } else {
+        var elementDescription = document.getElementById("descriptionId");
+        elementDescription.style.display = "inline";
+        elementErreur.style.display = "none";
     }
 
     return valeur;
@@ -46,12 +42,10 @@ function afficherReclamation(valeur) {
     var elementErreur = document.getElementById("nonAssurer");
     var elementDescription = document.getElementById("questionReclamation");
 
-    if(currentYear - valeur > 25){
+    if (currentYear - valeur > 25) {
         elementErreur.style.display = "inline";
         elementDescription.style.display = "none";
-    }
-
-    else {
+    } else {
         elementDescription.style.display = "inline";
         elementErreur.style.display = "none";
     }
@@ -60,12 +54,10 @@ function afficherReclamation(valeur) {
 }
 
 function afficherNombreReclamation(valeur) {
-    if(valeur == "oui") {
+    if (valeur == "oui") {
         var elementDescription = document.getElementById("reponseReclamation");
         elementDescription.style.display = "inline";
-    }
-    
-    else if (valeur == "non") {
+    } else if (valeur == "non") {
         var elementBoutton = document.getElementById("submit");
         elementBoutton.style.display = "inline";
     }
@@ -87,90 +79,83 @@ function affichermontantReclamation(valeur) {
         max = valeur;
         //return max; // Returning max value
     }
-    
-    return valeur;
-}
-
-
-function affichermontantReclamation2(max,valeur, cout, num) {
-    var elementReclamation = document.getElementById("montantReclamation" + num);
-    var elementErreur = document.getElementById("nonAssurer");
-    var elementBoutton = document.getElementById("submit");
-
-    if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
-        elementErreur.style.display = "inline";
-    } 
-    else if (max >= num) {    
-        elementReclamation.style.display = "inline";
-    }
-    else
-    {
-        elementBoutton.style.display = "inline";
-    }
 
     return valeur;
 }
 
-function affichermontantReclamation3(max,valeur, cout, num) {
+
+function affichermontantReclamation2(max, valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
     var elementBoutton = document.getElementById("submit");
 
-    if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
+    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
         elementReclamation.style.display = "inline";
-    }
-    else
-    {
+    } else {
         elementBoutton.style.display = "inline";
     }
 
     return valeur;
 }
 
-function affichermontantReclamation4(max,valeur, cout, num) {
+function affichermontantReclamation3(max, valeur, cout, num) {
+    var elementReclamation = document.getElementById("montantReclamation" + num);
+    var elementErreur = document.getElementById("nonAssurer");
+    var elementBoutton = document.getElementById("submit");
+
+    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
+        elementErreur.style.display = "inline";
+    } else if (max >= num) {
+        elementReclamation.style.display = "inline";
+    } else {
+        elementBoutton.style.display = "inline";
+    }
+
+    return valeur;
+}
+
+function affichermontantReclamation4(max, valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementBoutton = document.getElementById("submit");
     var elementErreur = document.getElementById("nonAssurer");
 
-    if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
+    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
         elementReclamation.style.display = "inline";
         elementBoutton.style.display = "inline";
-    }
-    else
-    {
+    } else {
         elementBoutton.style.display = "inline";
     }
 
     return valeur;
 }
 
-var valeurAchat,montantDeBase,age,genre;
+var valeurAchat, montantDeBase, age, genre;
 
-function calculDeMontantDeBase(age,genre,valeurAchat,nombreReclamation,totalReclamations) {
+function calculDeMontantDeBase(age, genre, valeurAchat, nombreReclamation, totalReclamations) {
 
-    if(totalReclamations < 35000) {
-        if(parseInt(age) < 25 && genre == "Homme" || parseInt(age) < 25 && genre == "Non-binaires" ) 
+    if (totalReclamations < 35000) {
+        if (parseInt(age) < 25 && genre == "Homme" || parseInt(age) < 25 && genre == "Non-binaires")
             montantDeBase = 0.05 * valeurAchat;
         else if (parseInt(age) >= 75)
             montantDeBase = 0.04 * valeurAchat;
-        else 
-            montantDeBase =  0.02 * valeurAchat;
-        calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations);
+        else
+            montantDeBase = 0.02 * valeurAchat;
+        calculAssuranceAnnuelle(montantDeBase, nombreReclamation, totalReclamations);
     }
 
 }
 
-function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations) {
+function calculAssuranceAnnuelle(montantDeBase, nombreReclamation, totalReclamations) {
     var elementReprendre = document.getElementById("reprendre");
 
-    if(totalReclamations > 25000)
+    if (totalReclamations > 25000)
         assuranceAnnuelle = montantDeBase + (350 * nombreReclamation) + 500;
 
-    else 
+    else
         assuranceAnnuelle = montantDeBase + (350 * nombreReclamation);
 
     assuranceMensuelle = assuranceAnnuelle / 12;
@@ -188,9 +173,9 @@ function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamatio
     elementReprendre.style.display = "block";
 }
 
-function reprendre(){
+function reprendre() {
     var elementSex = document.getElementById("sex");
-    var elementReclamation = document.getElementById("montantReclamation1" );
+    var elementReclamation = document.getElementById("montantReclamation1");
     var elementBoutton = document.getElementById("submit");
     var elementErreur = document.getElementById("nonAssurer");
     var elementReprendre = document.getElementById("reprendre");
@@ -222,17 +207,17 @@ function reprendre(){
     var elementFormulaire = document.getElementById("formulaire");
 
 
-    elementSex.style.display = "inline";    
+    elementSex.style.display = "inline";
 
     var radioButtons = document.querySelectorAll('input[type="radio"]');
-for (var i = 0; i < radioButtons.length; i++) {
-    radioButtons[i].checked = false;
-}
+    for (var i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].checked = false;
+    }
 
-var inputNumberFields = document.querySelectorAll('input[type="number"]');
-for (var i = 0; i < inputNumberFields.length; i++) {
-    inputNumberFields[i].value = '';
-}
+    var inputNumberFields = document.querySelectorAll('input[type="number"]');
+    for (var i = 0; i < inputNumberFields.length; i++) {
+        inputNumberFields[i].value = '';
+    }
 
 
 }
