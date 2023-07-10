@@ -11,7 +11,7 @@
     <body>
         <div class="top">
             <a id="Alogo" href="index.html">
-            <img id="logo" src="AssuranceLogo.PNG" alt="logo">
+            <img id="logo" src="../Photos/AssuranceLogo.PNG" alt="logo">
             </a>
             <div class="navbar">
                 <ul>
@@ -54,7 +54,7 @@
 
                     <div id="valeurId">
                     <label for="valeur">Quelle est la valeur d'achat de votre véhicule?</label>
-                    <input type="number" id="valeur" name="valeur" min="0" required onchange=" valeurAchat = afficherDescription(this.value)">
+                    <input type="number" id="valeur" name="valeur" min="0" required onchange="valeurAchat = afficherDescription(this.value)">
                     </div>
 
                     <div id="descriptionId">
@@ -66,41 +66,42 @@
                     <label id="reclam">Avez-vous fait des réclamations d'assurance auto dans les 6 dernières années?</label>
                     <div id="reponse">
                         <label for="oui">Oui</label>
-                        <input type="radio" name="reclamation" value="oui" id="oui" onchange="afficherNombreReclamation(this.value)">
+                        <input type="radio" name="reclamation" value="oui" id="oui" onchange="afficherNombreReclamation(this.value);">
                         <label for="non">Non</label>
                         <input type="radio" name="reclamation" value="non" id="non">
                     </div>
                     </div>
-                        <div id="reponseReclamation">
+                    <div id="reponseReclamation">
                     <label for="reclamations" >Combien de réclamations avez-vous faites? </label>
-                    <input type="number" id="reclamations" min="0" onchange="max = affichermontantReclamation(this.value,1,1);" required>
+                    <input type="number" id="reclamations" min="0" required onchange="maxi = affichermontantReclamation(this.value); console.log(maxi) ; /*cout=0 ;*/" >
                     </div>
 
                     <div id="montantReclamation1">
                         <label id="textRec" for="nombreReclamation">Pour la réclamation #1, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange="cout = parseInt(affichermontantReclamation(this.value,max,2));" required>
+                        <input type="number" id="nombreReclamation" min="0" onchange="console.log(maxi+ 'maxxxx'); cout = affichermontantReclamation2(maxi,this.value,cout,2);" required>
                     </div>
 
                     <div id="montantReclamation2">
                         <label id="textRec" for="nombreReclamation">Pour la réclamation #2, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange="cout = parseInt(affichermontantReclamation(this.value,cout,3));" required>
+                        <input type="number" id="nombreReclamation" min="0" onchange="cout = parseInt(affichermontantReclamation3(maxi,this.value,cout,3));" required>
                     </div>
 
                     <div id="montantReclamation3">
                         <label id="textRec" for="nombreReclamation">Pour la réclamation #3, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange="cout = parseInt(affichermontantReclamation(this.value,cout,4));" required>
+                        <input type="number" id="nombreReclamation" min="0" onchange="cout = parseInt(affichermontantReclamation4(maxi,this.value,cout,4));" required>
                     </div>
 
                     <div id="montantReclamation4">
                         <label id="textRec" for="nombreReclamation">Pour la réclamation #4, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange="cout = parseInt(affichermontantReclamation(this.value,cout,4));" required>
+                        <input type="number" id="nombreReclamation" min="0" onchange="cout = parseInt(affichermontantReclamation4(maxi,this.value,cout,4));" required>
                     </div>
 
-                    <input type="button" id="submit" value="Soumettre" onclick=" calculDeMontantDeBase(age,sex,valeurAchat,max,cout)">
+                    <input type="button" id="submit" value="Soumettre" onclick=" calculDeMontantDeBase(age,sex,valeurAchat,maxi,cout)">
                     </div>
                     <div id="nonAssurer">Désolé, nous n'avons aucun produit à offrir pour ce profil de client.</div>
 
                     <div id="total">
+
                     </div>
 
                 </div>
