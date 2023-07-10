@@ -25,7 +25,8 @@
 #Alogo {
 	width: 150px;
 	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #logo {
@@ -33,39 +34,6 @@
 	border-radius: 10px;
 	padding-left: 0%;
 	margin-top: 5px;
-}
-
-.navbar {
-	margin-top: 30px;
-}
-
-.navbar ul li a {
-	text-decoration: none;
-	color: #000;
-	text-transform: uppercase;
-}
-
-.navbar ul li ::after {
-	content: '';
-	height: 3px;
-	width: 0;
-	background: #1f6ed4;
-	position: absolute;
-	left: 0;
-	bottom: -10px;
-	transition: 0.5s;
-}
-
-.navbar ul li {
-	list-style: none;
-	display: inline-block;
-	margin: 0 20px;
-	position: relative;
-	font-family: 'Gotham', sans-serif;
-}
-
-.navbar ul li :hover:after {
-	width: 100%;
 }
 
 .main

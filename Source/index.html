@@ -1,31 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr-CA">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Assurance</title>
         <link rel="stylesheet" type="text/css" href="index.css">
-        <script src="script.js" ></script>
+        <script src="script.js"></script>
     </head>
     <body>
         <div class="top">
             <a id="Alogo" href="index.html">
-            <img id="logo" src="../Photos/AssuranceLogo.PNG" alt="logo">
+                <img id="logo" src="../Photos/AssuranceLogo.PNG" alt="logo">
             </a>
-            <div class="navbar">
-                <ul>
-                <li><a href="Plaintes.html">Plaintes</a></li>
-                <li><a href="Visites.html">Patients et visiteurs</a></li>
-                <li><a href="Recrutement.html">Stage et embauche</a></li>
-                <li><a href="SavoirPlus.html">A propos de nous</a></li>
-                </ul>
-            </div>
-            <a href="#recherche">
-            <button type="button" class="boutton">
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/general-icon-collection-linear-fillet/icon_search-9.png" alt="Search Icon">
-            </button>
-            </a>                      
         </div>
 
         <div class="Main1">
@@ -36,79 +23,75 @@
                     <h1>
                         Bienvenue dans notre assurance auto
                     </h1>
-                    <p>Permettez nous de vous posez quelques questions</p>
+                    <p>Permettez-nous de vous poser quelques questions</p>
                     <div id="formulaire">
                         <div id="sex">
-                        <label>Vous etes</label>
-                        <input type="radio" name="gender" value="Homme" id="Men" onchange="sex = afficherAge(this.value)">
-                        <label for="Men">Homme</label>
-                        <input type="radio" name="gender" value="Femme" id="Women" onchange="sex = afficherAge(this.value)">
-                        <label for="Women">Femme</label>
-                        <input type="radio" name="gender" value="Non-binaire" id="Non-binaire" onchange="sex = afficherAge(this.value)">
-                        <label for="Non-binaire">Non-binaire</label>
-                    </div>
-                    <div id="age">
-                    <label for="Age">Quel est votre âge ?</label>
-                    <input type="number" id="Age" name="age" min="0" required onchange="age = afficherValeur(sex,this.value)">
-                    </div>
+                            <label>Vous êtes</label>
+                            <input type="radio" name="gender" value="Homme" id="Men" onchange="sex = afficherAge(this.value)">
+                            <label for="Men">Homme</label>
+                            <input type="radio" name="gender" value="Femme" id="Women" onchange="sex = afficherAge(this.value)">
+                            <label for="Women">Femme</label>
+                            <input type="radio" name="gender" value="Non-binaire" id="Non-binaire" onchange="sex = afficherAge(this.value)">
+                            <label for="Non-binaire">Non-binaire</label>
+                        </div>
+                        <div id="age">
+                            <label for="Age">Quel est votre âge ?</label>
+                            <input type="number" id="Age" name="age" min="0" required onchange="age = afficherValeur(sex,this.value)">
+                        </div>
 
-                    <div id="valeurId">
-                    <label for="valeur">Quelle est la valeur d'achat de votre véhicule?</label>
-                    <input type="number" id="valeur" name="valeur" min="0" required onchange="valeurAchat = afficherDescription(this.value)">
-                    </div>
+                        <div id="valeurId">
+                            <label for="valeur">Quelle est la valeur d'achat de votre véhicule?</label>
+                            <input type="number" id="valeur" name="valeur" min="0" required onchange="valeurAchat = afficherDescription(this.value)">
+                        </div>
 
-                    <div id="descriptionId">
-                    <label for="Description">Quelle est l'année de fabrication de votre véhicule?</label>
-                    <input type="number" id="annee" name="annee" min="1900" max="2023" required onchange="afficherReclamation(this.value)">
-                    </div>
+                        <div id="descriptionId">
+                            <label for="annee">Quelle est l'année de fabrication de votre véhicule?</label>
+                            <input type="number" id="annee" name="annee" min="1900" max="2023" required onchange="afficherReclamation(this.value)">
+                        </div>                        
 
-                    <div id="questionReclamation">
-                    <label id="reclam">Avez-vous fait des réclamations d'assurance auto dans les 6 dernières années?</label>
-                    <div id="reponse">
-                        <label for="oui">Oui</label>
-                        <input type="radio" name="reclamation" value="oui" id="oui" onchange="afficherNombreReclamation(this.value);">
-                        <label for="non">Non</label>
-                        <input type="radio" name="reclamation" value="non" id="non">
-                    </div>
-                    </div>
-                    <div id="reponseReclamation">
-                    <label for="reclamations" >Combien de réclamations avez-vous faites? </label>
-                    <input type="number" id="reclamations" min="0" required onchange="maxi = affichermontantReclamation(this.value); " >
-                    </div>
+                        <div id="questionReclamation">
+                            <label id="reclam">Avez-vous fait des réclamations d'assurance auto dans les 6 dernières années?</label>
+                            <div id="reponse">
+                                <label for="oui">Oui</label>
+                                <input type="radio" name="reclamation" value="oui" id="oui" onchange="afficherNombreReclamation(this.value);">
+                                <label for="non">Non</label>
+                                <input type="radio" name="reclamation" value="non" id="non">
+                            </div>
+                        </div>
+                        <div id="reponseReclamation">
+                            <label for="reclamations">Combien de réclamations avez-vous faites?</label>
+                            <input type="number" id="reclamations" min="0" required onchange="maxi = affichermontantReclamation(this.value);">
+                        </div>
 
-                    <div id="montantReclamation1">
-                        <label id="textRec" for="nombreReclamation">Pour la réclamation #1, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange=" cout = parseFloat(affichermontantReclamation2(maxi,this.value,0,2)) ;" required>
-                    </div>
+                        <div id="montantReclamation1">
+                            <label id="textRec" for="nombreReclamation">Pour la réclamation #1, quel montant avez-vous réclamé?</label>
+                            <input type="number" id="nombreReclamation" min="0" onchange="cout = parseFloat(affichermontantReclamation2(maxi,this.value,0,2));" required>
+                        </div>
 
-                    <div id="montantReclamation2">
-                        <label id="textRec" for="nombreReclamation">Pour la réclamation #2, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange="cout += parseFloat(affichermontantReclamation3(maxi,this.value,cout,3));" required>
-                    </div>
+                        <div id="montantReclamation2">
+                            <label id="textRec2" for="nombreReclamation2">Pour la réclamation #2, quel montant avez-vous réclamé?</label>
+                            <input type="number" id="nombreReclamation2" min="0" onchange="cout += parseFloat(affichermontantReclamation3(maxi, this.value, cout, 3));" required>
+                        </div>
 
-                    <div id="montantReclamation3">
-                        <label id="textRec" for="nombreReclamation">Pour la réclamation #3, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange="cout += parseFloat(affichermontantReclamation4(maxi,this.value,cout,4));" required>
-                    </div>
+                        <div id="montantReclamation3">
+                            <label id="textRec3" for="nombreReclamation3">Pour la réclamation #3, quel montant avez-vous réclamé?</label>
+                            <input type="number" id="nombreReclamation3" min="0" onchange="cout += parseFloat(affichermontantReclamation4(maxi, this.value, cout, 4));" required>
+                        </div>
 
-                    <div id="montantReclamation4">
-                        <label id="textRec" for="nombreReclamation">Pour la réclamation #4, quel montant avez-vous réclamé?</label>
-                        <input type="number" id="nombreReclamation" min="0" onchange="cout += parseFloat(affichermontantReclamation4(maxi,this.value,cout,4));" required>
-                    </div>
+                        <div id="montantReclamation4">
+                            <label id="textRec4" for="nombreReclamation4">Pour la réclamation #4, quel montant avez-vous réclamé?</label>
+                            <input type="number" id="nombreReclamation4" min="0" onchange="cout += parseFloat(affichermontantReclamation4(maxi, this.value, cout, 4));" required>
+                        </div>
 
-                    <input type="button" id="submit" value="Soumettre" onclick=" calculDeMontantDeBase(age,sex,valeurAchat,maxi,cout)">
+                        <input type="button" id="submit" value="Soumettre" onclick="calculDeMontantDeBase(age, sex, valeurAchat, maxi, cout)">
                     </div>
                     <div id="nonAssurer">Désolé, nous n'avons aucun produit à offrir pour ce profil de client.</div>
 
-                    <div id="total">
+                    <div id="total"></div>
 
-                    </div>
-
-                    <input type="button" id="reprendre" value="Reprendre" onclick=" reprendre()">
-
+                    <input type="button" id="reprendre" value="Reprendre" onclick="reprendre()">
                 </div>
-                <div class="right">
-                </div>
+                <div class="right"></div>
             </div>
         </div>
     </body>
