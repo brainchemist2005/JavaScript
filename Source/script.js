@@ -88,12 +88,17 @@ function affichermontantReclamation(valeur) {
 function affichermontantReclamation2(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
+    var elementBoutton = document.getElementById("submit");
 
     if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } 
     else if (max >= num) {    
         elementReclamation.style.display = "inline";
+    }
+    else
+    {
+        elementBoutton.style.display = "inline";
     }
 
     return valeur;
@@ -102,11 +107,16 @@ function affichermontantReclamation2(max,valeur, cout, num) {
 function affichermontantReclamation3(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
+    var elementBoutton = document.getElementById("submit");
 
     if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
         elementReclamation.style.display = "inline";
+    }
+    else
+    {
+        elementBoutton.style.display = "inline";
     }
 
     return valeur;
@@ -151,6 +161,8 @@ function calculDeMontantDeBase(age,genre,valeurAchat,nombreReclamation,totalRecl
 }
 
 function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations) {
+    var elementReprendre = document.getElementById("reprendre");
+
     if(totalReclamations > 25000)
         assuranceAnnuelle = montantDeBase + (350 * nombreReclamation) + 500;
 
@@ -168,4 +180,55 @@ function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamatio
     elementBoutton.style.display = "none";
 
     elementTotal.style.display = "inline";
+
+    elementReprendre.style.display = "block";
+}
+
+function reprendre(){
+    var elementSex = document.getElementById("sex");
+    var elementReclamation = document.getElementById("montantReclamation1" );
+    var elementBoutton = document.getElementById("submit");
+    var elementErreur = document.getElementById("nonAssurer");
+    var elementReprendre = document.getElementById("reprendre");
+    var elementReclamation2 = document.getElementById("montantReclamation2");
+    var elementReclamation3 = document.getElementById("montantReclamation3");
+    var elementReclamation4 = document.getElementById("montantReclamation4");
+    var elementDescription = document.getElementById("reponseReclamation");
+    var elementDescription1 = document.getElementById("questionReclamation");
+    var elementValeur = document.getElementById("valeurId");
+    var elementAge = document.getElementById("age");
+    var elementDescription2 = document.getElementById("descriptionId");
+    var elementTotal = document.getElementById("total");
+
+
+    elementReclamation.style.display = "none";
+    elementBoutton.style.display = "none";
+    elementErreur.style.display = "none";
+    elementReprendre.style.display = "none";
+    elementReclamation2.style.display = "none";
+    elementReclamation3.style.display = "none";
+    elementReclamation4.style.display = "none";
+    elementDescription.style.display = "none";
+    elementDescription1.style.display = "none";
+    elementValeur.style.display = "none";
+    elementAge.style.display = "none";
+    elementDescription2.style.display = "none";
+    elementTotal.style.display = "none";
+
+    var elementFormulaire = document.getElementById("formulaire");
+
+
+    elementSex.style.display = "inline";    
+
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+for (var i = 0; i < radioButtons.length; i++) {
+    radioButtons[i].checked = false;
+}
+
+var inputNumberFields = document.querySelectorAll('input[type="number"]');
+for (var i = 0; i < inputNumberFields.length; i++) {
+    inputNumberFields[i].value = '';
+}
+
+
 }

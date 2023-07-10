@@ -37,15 +37,15 @@
                         Bienvenue dans notre assurance auto
                     </h1>
                     <p>Permettez nous de vous posez quelques questions</p>
-                    <div class="formulaire">
-                        <div class="sex">
+                    <div id="formulaire">
+                        <div id="sex">
                         <label>Vous etes</label>
                         <input type="radio" name="gender" value="Homme" id="Men" onchange="sex = afficherAge(this.value)">
                         <label for="Men">Homme</label>
                         <input type="radio" name="gender" value="Femme" id="Women" onchange="sex = afficherAge(this.value)">
                         <label for="Women">Femme</label>
                         <input type="radio" name="gender" value="Non-binaire" id="Non-binaire" onchange="sex = afficherAge(this.value)">
-                        <label for="Women">Non-binaire</label>
+                        <label for="Non-binaire">Non-binaire</label>
                     </div>
                     <div id="age">
                     <label for="Age">Quel est votre âge ?</label>
@@ -103,6 +103,8 @@
                     <div id="total">
 
                     </div>
+
+                    <input type="button" id="reprendre" value="Reprendre" onclick=" reprendre()">
 
                 </div>
                 <div class="right">
