@@ -27,15 +27,15 @@
                     <div id="formulaire">
                         <div id="sex">
                             <label>Vous êtes</label>
-                            <input type="radio" name="gender" value="Homme" id="Men" onchange="sex = afficherAge(this.value)">
+                            <input type="radio" name="gender" value="Homme" id="men" onchange="sex = afficherAge(this.value)">
                             <label for="Men">Homme</label>
-                            <input type="radio" name="gender" value="Femme" id="Women" onchange="sex = afficherAge(this.value)">
+                            <input type="radio" name="gender" value="Femme" id="women" onchange="sex = afficherAge(this.value)">
                             <label for="Women">Femme</label>
-                            <input type="radio" name="gender" value="Non-binaire" id="Non-binaire" onchange="sex = afficherAge(this.value)">
+                            <input type="radio" name="gender" value="Non-binaire" id="non-binaire" onchange="sex = afficherAge(this.value)">
                             <label for="Non-binaire">Non-binaire</label>
                         </div>
                         <div id="age">
-                            <label for="Age">Quel est votre âge ?</label>
+                            <label for="age">Quel est votre âge ?</label>
                             <input type="number" id="Age" name="age" min="0" required onchange="age = afficherValeur(sex,this.value)">
                         </div>
 
@@ -55,7 +55,7 @@
                                 <label for="oui">Oui</label>
                                 <input type="radio" name="reclamation" value="oui" id="oui" onchange="afficherNombreReclamation(this.value);">
                                 <label for="non">Non</label>
-                                <input type="radio" name="reclamation" value="non" id="non">
+                                <input type="radio" name="reclamation" value="non" id="non" onchange="afficherNombreReclamation(this.value);">
                             </div>
                         </div>
                         <div id="reponseReclamation">
@@ -83,7 +83,7 @@
                             <input type="number" id="nombreReclamation4" min="0" onchange="cout += parseFloat(affichermontantReclamation4(maxi, this.value, cout, 4));" required>
                         </div>
 
-                        <input type="button" id="submit" value="Soumettre" onclick="calculDeMontantDeBase(age, sex, valeurAchat, maxi, cout)">
+                        <input type="button" id="submit" value="Soumettre" onclick="try {calculDeMontantDeBase(age, sex, valeurAchat, maxi, cout)} catch(e) {calculDeMontantDeBase(age, sex, valeurAchat, 0, 0)}">
                     </div>
                     <div id="nonAssurer">Désolé, nous n'avons aucun produit à offrir pour ce profil de client.</div>
 

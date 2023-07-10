@@ -60,8 +60,15 @@ function afficherReclamation(valeur) {
 }
 
 function afficherNombreReclamation(valeur) {
-    var elementDescription = document.getElementById("reponseReclamation");
-    elementDescription.style.display = "inline";
+    if(valeur == "oui") {
+        var elementDescription = document.getElementById("reponseReclamation");
+        elementDescription.style.display = "inline";
+    }
+    
+    else if (valeur == "non") {
+        var elementBoutton = document.getElementById("submit");
+        elementBoutton.style.display = "inline";
+    }
 
     return valeur;
 }
@@ -148,13 +155,10 @@ function calculDeMontantDeBase(age,genre,valeurAchat,nombreReclamation,totalRecl
     if(totalReclamations < 35000) {
         if(parseInt(age) < 25 && genre == "Homme" || parseInt(age) < 25 && genre == "Non-binaires" ) 
             montantDeBase = 0.05 * valeurAchat;
-
         else if (parseInt(age) >= 75)
             montantDeBase = 0.04 * valeurAchat;
-
         else 
             montantDeBase =  0.02 * valeurAchat;
-
         calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations);
     }
 
