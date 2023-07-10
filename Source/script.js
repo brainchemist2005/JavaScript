@@ -68,7 +68,7 @@ function afficherNombreReclamation(valeur) {
     return valeur;
 }
 
-var couts;
+var cout;
 var max;
 
 function affichermontantReclamation(valeur) {
@@ -89,63 +89,64 @@ function affichermontantReclamation(valeur) {
 }
 
 
-function affichermontantReclamation2(max,valeur, couts, num) {
+function affichermontantReclamation2(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
     console.log("max: " + max);
 
-    if (parseInt(couts) > 35000 || parseInt(valeur) > 35000 || max > 4) {
+    console.log( parseInt(cout) + parseInt(valeur) > 35000);
+
+    if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } 
     else if (max >= num) {
-        elementReclamation.style.display = "inline";
         console.log("valeur: " + valeur);
-        console.log("max: " + max);
-        couts = parseFloat(couts) + parseFloat(valeur);
+        console.log("max: " + max);    
+        elementReclamation.style.display = "inline";
     }
 
     console.log("valeur: " + valeur);
     console.log("max: " + max);
-    console.log("couts: " + couts);
+    console.log("cout: " + cout);
 
 
     return valeur;
 }
 
-function affichermontantReclamation3(max,valeur, couts, num) {
+function affichermontantReclamation3(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
-    if (parseInt(couts) > 35000 || parseInt(valeur) > 35000 || max > 4) {
+    console.log("cout: " + cout);
+
+    if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
-        elementReclamation.style.display = "inline";
         console.log("valeur: " + valeur);
-        couts = parseFloat(couts) + parseFloat(valeur);
+        elementReclamation.style.display = "inline";
     }
 
     console.log("max: " + max);
-    console.log("couts: " + couts);
+    console.log("cout: " + cout);
 
     return valeur;
 }
 
-function affichermontantReclamation4(max,valeur, couts, num) {
+function affichermontantReclamation4(max,valeur, cout, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
-    if (parseInt(couts) > 35000 || parseInt(valeur) > 35000 || max > 4) {
+    if ( parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4 || parseInt(cout) + parseInt(valeur) > 35000) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
-        elementReclamation.style.display = "inline";
         console.log("valeur: " + valeur);
-        couts = parseFloat(couts) + parseFloat(valeur);
+        elementReclamation.style.display = "inline";
     }
 
     console.log("max: " + max);
     console.log("num: " + num);
-    console.log("couts: " + couts);
+    console.log("cout: " + cout);
 
 
     return valeur;
@@ -154,18 +155,21 @@ function affichermontantReclamation4(max,valeur, couts, num) {
 var valeurAchat,montantDeBase,age,genre;
 
 function calculDeMontantDeBase(age,genre,valeurAchat,nombreReclamation,totalReclamations) {
-    if(age < 25 && genre == "Hommes" || age < 25 && genre == "Non-binaires" ) 
-        montantDeBase = 0.05 * valeurAchat;
 
-    else if (age >= 75)
-        montantDeBase = 0.04 * valeurAchat;
+    if(totalReclamations < 35000) {
+        if(age < 25 && genre == "Hommes" || age < 25 && genre == "Non-binaires" ) 
+            montantDeBase = 0.05 * valeurAchat;
 
-    else 
-        montantDeBase =  0.02 * valeurAchat;
+        else if (age >= 75)
+            montantDeBase = 0.04 * valeurAchat;
 
-    console.log("Hellloooooo  V" + valeurAchat + " M " + montantDeBase + " C " + totalReclamations + " N " + nombreReclamation + " Sexe " + genre + " Age " + age);
+        else 
+            montantDeBase =  0.02 * valeurAchat;
 
-    calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations);
+        console.log("Hellloooooo  V" + valeurAchat + " M " + montantDeBase + " C " + totalReclamations + " N " + nombreReclamation + " Sexe " + genre + " Age " + age);
+
+        calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations);
+    }
 }
 
 function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamations) {
