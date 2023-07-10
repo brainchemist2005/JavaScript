@@ -68,7 +68,7 @@ function afficherNombreReclamation(valeur) {
     return valeur;
 }
 
-var cout;
+var couts;
 var max;
 
 function affichermontantReclamation(valeur) {
@@ -89,58 +89,64 @@ function affichermontantReclamation(valeur) {
 }
 
 
-function affichermontantReclamation2(max,valeur, cout, num) {
+function affichermontantReclamation2(max,valeur, couts, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
     console.log("max: " + max);
 
-    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4) {
+    if (parseInt(couts) > 35000 || parseInt(valeur) > 35000 || max > 4) {
         elementErreur.style.display = "inline";
     } 
     else if (max >= num) {
         elementReclamation.style.display = "inline";
         console.log("valeur: " + valeur);
         console.log("max: " + max);
+        couts = parseFloat(couts) + parseFloat(valeur);
     }
 
     console.log("valeur: " + valeur);
     console.log("max: " + max);
-    console.log("num: " + num);
+    console.log("couts: " + couts);
+
 
     return valeur;
 }
 
-function affichermontantReclamation3(max,valeur, cout, num) {
+function affichermontantReclamation3(max,valeur, couts, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
-    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4) {
+    if (parseInt(couts) > 35000 || parseInt(valeur) > 35000 || max > 4) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
         elementReclamation.style.display = "inline";
         console.log("valeur: " + valeur);
+        couts = parseFloat(couts) + parseFloat(valeur);
     }
 
     console.log("max: " + max);
-    console.log("num: " + num);
+    console.log("couts: " + couts);
 
     return valeur;
 }
 
-function affichermontantReclamation4(max,valeur, cout, num) {
+function affichermontantReclamation4(max,valeur, couts, num) {
     var elementReclamation = document.getElementById("montantReclamation" + num);
     var elementErreur = document.getElementById("nonAssurer");
 
-    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4) {
+    if (parseInt(couts) > 35000 || parseInt(valeur) > 35000 || max > 4) {
         elementErreur.style.display = "inline";
     } else if (max >= num) {
         elementReclamation.style.display = "inline";
         console.log("valeur: " + valeur);
+        couts = parseFloat(couts) + parseFloat(valeur);
     }
 
     console.log("max: " + max);
     console.log("num: " + num);
+    console.log("couts: " + couts);
+
 
     return valeur;
 }
@@ -180,47 +186,4 @@ function calculAssuranceAnnuelle(montantDeBase,nombreReclamation,totalReclamatio
     elementBoutton.style.display = "none";
 
     elementTotal.style.display = "inline";
-}
-
-
-function affichermontantReclamation1(valeur, cout, num, max) {
-    var elementReclamation = document.getElementById("montantReclamation" + num);
-    var elementErreur = document.getElementById("nonAssurer");
-
-    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4) {
-        elementErreur.style.display = "inline";
-    } else if (max >= num) {
-        elementReclamation.style.display = "inline";
-        console.log("valeur: " + valeur);
-    }
-
-    console.log("max: " + max);
-    console.log("num: " + num);
-
-    return valeur;
-}
-
-
-var max;
-
-function affichermontantReclamation01(valeur, cout, num, max) {
-    var elementReclamation = document.getElementById("montantReclamation" + num);
-    var elementErreur = document.getElementById("nonAssurer");
-
-    if (parseInt(cout) > 35000 || parseInt(valeur) > 35000 || max > 4) {
-        elementErreur.style.display = "inline";
-    } else if (max >= num) {
-        elementReclamation.style.display = "inline";
-        console.log("valeur: " + valeur);
-    }
-    else if(max < num)
-    {
-        return cout;
-    }
-
-    cout += parseInt(valeur);
-    console.log("max: " + max);
-    console.log("num: " + num);
-
-    return affichermontantReclamation01(valeur, cout, parseInt(num) + 1, max);
 }
